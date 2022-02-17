@@ -1,8 +1,6 @@
 FROM ubuntu:xenial
 LABEL maintainer="Wes Bonelli"
 
-# RUN mkdir -p ${SINGULARITY_ROOTFS}/code
-
 COPY iinit.sh /code/iinit.sh
 
 ENV IRODS_VERSION=4.2.2
@@ -24,7 +22,3 @@ RUN apt-get update && apt-get install -y \
     irods-runtime=${IRODS_VERSION} \
     irods-icommands=${IRODS_VERSION} \
     libxml2
-
-# %apprun iinit
-#   exec /bin/bash /code/iinit.sh "${@}"
-
