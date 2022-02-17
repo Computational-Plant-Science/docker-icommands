@@ -21,6 +21,7 @@ RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | sudo apt-key a
 RUN echo "deb [arch=amd64] https://packages.irods.org/apt/ xenial main" | sudo tee /etc/apt/sources.list.d/renci-irods.list
 
 RUN apt-get update && apt-get install -y \
+    irods-runtime=${IRODS_VERSION} \
     irods-icommands=${IRODS_VERSION} \
     libxml2
 
